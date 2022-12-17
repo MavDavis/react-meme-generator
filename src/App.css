@@ -1,37 +1,80 @@
- @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,800;1,600&display=swap'); 
-*{
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,800;1,600&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Nunito Sans', sans-serif;
-
+  font-family: "Nunito Sans", sans-serif;
 }
-:root{
-  --purple:#672280;
-  --white:#ffffff;
+:root {
+  --purple: #672280;
+  --white: #ffffff;
 }
-nav, .div1{
+nav,
+.div1 {
   width: 100%;
-  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
 }
-nav{
+.div1 {
+  padding: 1rem 5%;
+}
+nav {
   background: var(--purple);
+  padding: 1rem 2rem;
+}
+nav p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: var(--white);
+}
+input {
+  height: 35px;
+  width: 40%;
+  border: 2px solid #d5d4d8;
+  border-radius: 5px;
+padding:10px;
+font-size: 12px;
+font-weight: 400;
+line-height: 14px;
+letter-spacing: 0em;
+text-align: left;
 
 }
-nav p{
-font-size: 12px;
-font-weight: 500;
-line-height: 15px;
-letter-spacing: 0em;
-text-align: right;
-color: var(--white);
+input:focus, input:active{
+  outline: none;
+
 }
-input{
-  height: 35px;
-width: 40%;
-border: 2px solid #D5D4D8;
-border-radius: 5px;
+.button {
+  width: 90%;
+  padding: 1rem 2rem;
+  margin: 2rem auto 0;
+  color: var(--white);
+  display: flex;
+  border-radius: 5px;
+  justify-content: space-between;
+  background: var(--purple);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.button p {
+  /* font-family: Karla; */
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  /* letter-spacing: 0.1em; */
+  text-align: center;
+}
+.img-div {
+  width: 477px;
+  height: 268px;
+  padding: 1rem 5%;
+margin: 2rem auto;
+  border-radius: 2px;
+  border: solid 1px #d5d4d8;
+  border-radius: 5px;
 
 }
