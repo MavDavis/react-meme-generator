@@ -35,17 +35,16 @@ input {
   width: 40%;
   border: 2px solid #d5d4d8;
   border-radius: 5px;
-padding:10px;
-font-size: 12px;
-font-weight: 400;
-line-height: 14px;
-letter-spacing: 0em;
-text-align: left;
-
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
 }
-input:focus, input:active{
+input:focus,
+input:active {
   outline: none;
-
 }
 .button {
   width: 90%;
@@ -71,10 +70,32 @@ input:focus, input:active{
 .img-div {
   width: 477px;
   height: 268px;
-  padding: 1rem 5%;
-margin: 2rem auto;
+  position: relative;
+  margin: 2rem auto;
   border-radius: 2px;
   border: solid 1px #d5d4d8;
   border-radius: 5px;
-
+}
+.img-div img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.input{
+  position: absolute;
+  left: 10%;
+  z-index: 9999;
+}
+.top{
+  top: 10%;
+}
+.bottom{
+  bottom: 10%;
+}
+.toggleIsGoingOut{
+  width: 100vw;
+  height: 50px;
+  cursor: pointer;
+  background-color: #672280;
+  color: #ffffff;
 }
