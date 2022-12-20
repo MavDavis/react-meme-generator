@@ -83,8 +83,16 @@ input:active {
 }
 .input{
   position: absolute;
-  left: 10%;
   z-index: 9999;
+  /* font-family: Impact; */
+  width: 100%;
+font-size: 32px;
+font-weight: 900;
+line-height: 39px;
+letter-spacing: 0em;
+color: var(--white);
+text-align: center;
+
 }
 .top{
   top: 10%;
