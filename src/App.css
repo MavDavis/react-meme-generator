@@ -75,12 +75,22 @@ input:active {
   border-radius: 2px;
   border: solid 1px #d5d4d8;
   border-radius: 5px;
+  /*  */
 }
 .img-div img {
   position: relative;
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+.img-div img::before{
+  top: 0;
+  left: 0;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
 }
 .input{
   position: absolute;
