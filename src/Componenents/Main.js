@@ -2,13 +2,12 @@ import React, { useState } from "react";
 let obj = "";
 
 export default function Main() {
-  const [res, changeRes] = useState("");
-  const [upperInput, changeUpperInput] = useState("");
-  const [lowerInput, changeLowerInput] = useState("");
-//   const [thingsArray, setThingsArray] = useState(["thing1", "thing2"]);
-//  let pTag = thingsArray.map((item) => {
-//     return <p>{item}</p>;
-//   });
+  const [res, changeRes] = useState({
+    img: "https://i.imgflip.com/2xscjb.png",
+    upperText: "Hello World",
+    LowerText: "Placeholder Meme",
+  });
+
   function fetchMeme() {
     let random = Math.random() * 100;
     let ran = Math.floor(random);
@@ -16,21 +15,19 @@ export default function Main() {
       .then((response) => response.json())
       .then((response) => {
         obj = response.data.memes[ran].url;
-        console.log(obj);
-        changeRes(obj);
+        changeRes((oldValue) => ({ ...oldValue, img: obj }));
       })
       .catch((err) => console.error(err));
   }
   function changeUpperInputValue(e) {
     if (e.key === "Enter") {
-      changeUpperInput(e.target.value);
-      e.target.value = "";
+      changeRes((oldValue) => ({ ...oldValue, upperText: e.target.value }));
     }
+    // e.target.value = "";
   }
   function changeLowerInputValue(e) {
     if (e.key === "Enter") {
-      changeLowerInput(e.target.value);
-      e.target.value = "";
+      changeRes((oldValue) => ({ ...oldValue, LowerText: e.target.value }))
     }
   }
 
@@ -44,21 +41,10 @@ export default function Main() {
         <p>Get a new meme image 🖼</p>
       </div>
       <div className="img-div">
-        <p className="input top">{upperInput}</p>
-        {res.length ? <img src={res} alt="img" /> : ""}
-        <p className="input bottom">{lowerInput}</p>
+        <p className="input top">{res.upperText}</p>
+        {res.img.length ? <img src={res.img} alt="img" /> : ""}
+        <p className="input bottom">{res.LowerText}</p>
       </div>
-      {/* <div>{pTag}</div>
-      <p
-        onClick={() => {
-          setThingsArray((oldValue) => [
-            ...oldValue,
-            `Things${oldValue.length + 1}`,
-          ]);
-        }}
-      >
-        addp
-      </p> */}
     </>
   );
 }
