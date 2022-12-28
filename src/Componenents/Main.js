@@ -23,15 +23,10 @@ const [count, countCalc] = useState(0)
       .catch((err) => console.error(err));
   }
   function changeUpperInputValue(e) {
-    if (e.key === "Enter") {
       changeRes((oldValue) => ({ ...oldValue, upperText: e.target.value }));
-    }
-    // e.target.value = "";
   }
   function changeLowerInputValue(e) {
-    if (e.key === "Enter") {
       changeRes((oldValue) => ({ ...oldValue, LowerText: e.target.value }))
-    }
   }
 const toggleIcon = ()=>{
   changeRes((oldValue) => ({ ...oldValue, icon:!oldValue.icon }))
@@ -48,7 +43,7 @@ function deccCount(){
   return (
     <>
       <div className="div1">
-        <input type="text" onKeyUp={changeUpperInputValue} />
+        <input type="text" onChange={changeUpperInputValue} />
         <input type="text" onKeyUp={changeLowerInputValue} />
       </div>
       <div onClick={fetchMeme} className="button">

@@ -102,6 +102,8 @@ input:active {
 font-size: 32px;
 font-weight: 900;
 line-height: 39px;
+-webkit-text-stroke: 1px #000;
+
 letter-spacing: 0em;
 color: var(--white);
 text-align: center;
