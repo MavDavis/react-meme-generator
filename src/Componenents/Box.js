@@ -1,14 +1,13 @@
 import React from "react";
-export default function Box(props){
-    const {id, on } = props
-    console.log(props);
-    return (<>
+export default function Box(props) {
+  const { handleClick, item } = props;
+  return (
+    <>
       <div
         style={{ width: "100px", height: "100px" }}
-        className={on ? "red-bg" : "grey-bg"}
-        onClick={() => {
-        //   toggleBox(item.id);
-        }}
+        className={item.on ? "red-bg" : "grey-bg"}
+        onClick={handleClick}
       ></div>
-    </>)
+    </>
+  );
 }
