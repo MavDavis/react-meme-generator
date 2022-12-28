@@ -11,8 +11,9 @@
 }
 nav,
 .div1 {
-  width: 100%;
+ width: 100vw;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .div1 {
@@ -69,6 +70,7 @@ input:active {
 }
 .img-div {
   width: 477px;
+  max-width: 100%;
   height: 268px;
   position: relative;
   margin: 2rem auto;
@@ -117,4 +119,41 @@ text-align: center;
   cursor: pointer;
   background-color: #672280;
   color: #ffffff;
+}
+.grey{
+  margin: 1rem auto;
+  font-size: 2rem;
+  color: #ccc;
+}
+.red{
+  margin: 1rem auto;
+  font-size: 2rem;
+  color: red;
+}
+.red-bg{
+  background: red;
+}
+.grey-bg{
+  background: gray;
+}
+.countNum{
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+.countMath{
+  font-size: 1rem;
+  margin: 1rem;
+  background-color: black;
+  color: white;
+  border-radius: 9999px;
+  padding:2px 6px;
+}
+.div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.div div{
+  border: solid 1px black;
+  margin:   10px;
 }

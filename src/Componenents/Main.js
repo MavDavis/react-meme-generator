@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Star from './Star'
+import Count from './Count'
 let obj = "";
 
 export default function Main() {
@@ -6,8 +8,9 @@ export default function Main() {
     img: "https://i.imgflip.com/2xscjb.png",
     upperText: "Hello World",
     LowerText: "Placeholder Meme",
+    icon:false
   });
-
+const [count, countCalc] = useState(0)
   function fetchMeme() {
     let random = Math.random() * 100;
     let ran = Math.floor(random);
@@ -30,7 +33,18 @@ export default function Main() {
       changeRes((oldValue) => ({ ...oldValue, LowerText: e.target.value }))
     }
   }
+const toggleIcon = ()=>{
+  changeRes((oldValue) => ({ ...oldValue, icon:!oldValue.icon }))
 
+}
+function incCount(){
+  countCalc(count+1)
+}
+function deccCount(){
+  countCalc(oldValue =>{
+  return oldValue - 1
+})
+}
   return (
     <>
       <div className="div1">
@@ -44,6 +58,12 @@ export default function Main() {
         <p className="input top">{res.upperText}</p>
         {res.img.length ? <img src={res.img} alt="img" /> : ""}
         <p className="input bottom">{res.LowerText}</p>
+      <Star res ={res.icon} handleClick={toggleIcon}/>
+      </div>
+      <div className="countNum">
+       <span className="countMath" onClick={incCount}>+</span>
+        <Count num ={count}/>
+       <span className="countMath" onClick={deccCount}>-</span>
       </div>
     </>
   );
