@@ -43,6 +43,7 @@ function deccCount(){
   return (
     <>
       <div className="div1">
+        {/* FVJHBKF */}
         <input type="text" onChange={changeUpperInputValue} />
         <input type="text" onKeyUp={changeLowerInputValue} />
       </div>
