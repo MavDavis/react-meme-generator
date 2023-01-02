@@ -8,9 +8,9 @@ export default function Resize() {
 
   useEffect(() => {
     window.addEventListener("resize", toggleSize);
-    return () => {
+    return (() => {
       window.removeEventListener("resize", toggleSize());
-    };
+    })
   }, []);
   return (
     <>
