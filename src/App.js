@@ -4,9 +4,10 @@ import Main from "./Componenents/Main";
 import { useState } from "react";
 import data from "./assets/data";
 import Box from "./Componenents/Box";
+import Resize from "./Componenents/Resize";
 function App() {
   const [datas, changeDatas] = useState(data);
-
+  const [resize, setResize] = useState(true);
   const item = datas.map((item) => {
     return (
       <Box
@@ -18,6 +19,7 @@ function App() {
       />
     );
   });
+
   const toggleBox = (id) => {
     changeDatas((prevArray) =>
       prevArray.map((item) =>
@@ -25,11 +27,17 @@ function App() {
       )
     );
   };
-
+  const toggleResize = () => {
+    setResize((oldValue) => !oldValue);
+  };
   return (
     <div className="App">
       <Navbar />
-      <Main />
+      <div>
+        {resize && <Resize />}
+        <button onClick={toggleResize}>toggleResize</button>
+      </div>
+      {/* <Main /> */}
       <div className="div">{item}</div>
     </div>
   );
